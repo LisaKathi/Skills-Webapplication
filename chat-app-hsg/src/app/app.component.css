@@ -1,0 +1,8 @@
+main {
+    min-height: 150px;
+  }
+  
+  main h1,
+  p {
+    color: var(--main-font-color);
+  }
