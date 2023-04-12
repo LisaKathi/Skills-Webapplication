@@ -1,0 +1,41 @@
+header {
+    background-color: #ffffff; /* Set the background color of the header */
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1); /* Add a subtle box shadow for depth */
+  }
+  
+  .header-container {
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space elements evenly horizontally */
+    align-items: center; /* Vertically align items */
+    max-width: 1200px; /* Set the maximum width of the container */
+    margin: 0 auto; /* Center the container horizontally */
+    padding: 1rem; /* Add padding around the container */
+  }
+  
+  .logo {
+    display: inline-flex; /* Make the logo inline-flex for better positioning */
+  }
+  
+  .logo img {
+    height: 50px; /* Set the height of the logo image */
+  }
+  
+  .nav-links {
+    list-style-type: none; /* Remove bullet points from the list */
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Vertically align items */
+    gap: 1rem; /* Add space between list items */
+  }
+  
+  .nav-links a {
+    color: #333; /* Set the text color for navigation links */
+    text-decoration: none; /* Remove underline from links */
+    padding: 0.25rem 0.5rem; /* Add padding around links for a larger click area */
+  }
+  
+  .nav-links a:hover,
+  .nav-links .active {
+    color: #00802f; /* Change the color when the link is hovered or active */
+    border-bottom: 2px solid #00802f; /* Add a border at the bottom of the active link */
+  }
+  

@@ -8,8 +8,18 @@ import { Component } from '@angular/core';
 export class ChatBoxComponent {
   inputText: string = '';
   copiedText: string = '';
+  messageHistory: string[] = [];
 
   copyText() {
-    this.copiedText = this.inputText;
+    if (this.inputText) {
+      this.messageHistory.push(this.inputText);
+      this.copiedText = this.inputText;
+      this.inputText = '';
+    }
   }
+
+  showHistory() {
+    this.copiedText = this.messageHistory.join('\n');
+  }
+  
 }
