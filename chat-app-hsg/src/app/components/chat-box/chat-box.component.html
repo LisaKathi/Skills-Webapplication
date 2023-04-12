@@ -1,4 +1,3 @@
-<p>chat-box works!</p>
-<input type="text" [(ngModel)]="inputText" class="chat-box">
-<input type="button" value="Send">
-<input type="text" class="chat-box">
+<input [ngModel]="inputText" (ngModelChange)="inputText=$event" class="chat-box" />
+<input type="button" (click)="copyText()" value="Send">
+<input [(ngModel)]="copiedText" class="chat-box" />
