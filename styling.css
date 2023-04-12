@@ -1,0 +1,37 @@
+.header {
+    padding: 5px;
+    background: #ffffff;
+    position: relative; 
+    left: 12pt;
+
+}
+
+.headline h1{
+    font-family:Helvetica;
+	color: #000;;
+	line-height: 1.2;
+    font-weight: 550;
+    font-size: 60px;
+    margin-bottom: 10px;
+    position: relative; 
+    left: 17pt;
+
+}
+
+.headline h2 {
+    font-family:Helvetica;
+    max-width: 520px;
+    color:#000;
+    font-size: 16px;
+    font-weight: 20;
+    position: relative; 
+    left: 25pt;
+
+}
+
+.footer{
+    padding: 50px;
+    background: grey;
+    color: #ffffff;
+    text-align: center;
+}

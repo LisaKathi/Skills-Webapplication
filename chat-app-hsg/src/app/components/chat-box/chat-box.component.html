@@ -1,6 +1,19 @@
-<input [ngModel]="inputText" (ngModelChange)="inputText=$event" class="chat-box" maxlength="280" />
-<input type="button" (click)="copyText()" value="Send">
-<input type="button" (click)="showHistory()" value="History">
-<textarea [(ngModel)]="copiedText" class="chat-box history-box" rows="3" readonly></textarea>
+<!--
 
+<input [ngModel]="inputText" (ngModelChange)="inputText=$event" class="chat-box" maxlength="280" />
+<div class="button-container">
+    <input type="button" class="send" (click)="copyText()" value="Send">
+    <input type="button" (click)="showHistory()" value="History">
+</div>
+<textarea [(ngModel)]="copiedText" class="chat-box history-box" rows="3" readonly></textarea>
+-->
+
+
+<input [ngModel]="inputText" (ngModelChange)="inputText=$event" class="chat-box" maxlength="280" style="height: 38px;" />
+
+<div class="button-container">
+    <input type="button" class="send" (click)="copyText()" value="Send">
+    <input type="button" (click)="showHistory()" value="History">
+</div>
+<textarea [(ngModel)]="copiedText" class="chat-box history-box" rows="3" readonly></textarea>
 
