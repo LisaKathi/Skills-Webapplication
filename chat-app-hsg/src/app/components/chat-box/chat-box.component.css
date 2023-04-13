@@ -18,21 +18,66 @@
     margin-bottom: 10px; /* Adds space between history box and buttons */
   }
   
-  input[type="button"] {
+  .send {
     cursor: pointer; /* Changes the cursor to a hand when hovering over the button */
-    background-color: #00802f; /* Sets the background color of the button */
-    color: #fff; /* Sets the text color of the button */
+    background-color: #c2fbd7;/* Sets the background color of the button */
+    border-radius: 100px; /* Rounds the corners of the button */
+    color: green; /* Sets the text color of the button */
     border: none; /* Removes the default button border */
-    border-radius: 5px; /* Rounds the corners of the button */
     padding: 8px 12px; /* Adds padding inside the button */
     font-size: 16px; /* Sets font size */
+    text-align: center;
     margin-left: 10px; /* Adds some space between the Send button and History button */
+    transition: all 250ms;
+    font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
+    padding: 7px 20px;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    display: inline-block;
+    box-shadow: rgba(44, 187, 99, .2) 0 -25px 18px -14px inset,rgba(44, 187, 99, .15) 0 1px 2px,rgba(44, 187, 99, .15) 0 2px 4px,rgba(44, 187, 99, .15) 0 4px 8px,rgba(44, 187, 99, .15) 0 8px 16px,rgba(44, 187, 99, .15) 0 16px 32px;
   }
   
-  input[type="button"]:hover {
-    background-color: #006622; /* Changes the background color on hover */
+
+  .send:hover {
+    background-color: #00802f; /* Changes the background color on hover */
+    color: white;
+    box-shadow: rgba(44,187,99,.35) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;
+    transform: scale(1.05) rotate(-1deg);
   }
   
+  .send:active {
+    background-color: #8ca494;
+    transform: scale(0.95);
+  }
+
+  .history {
+    cursor: pointer; /* Changes the cursor to a hand when hovering over the button */
+    background-color: white;/* Sets the background color of the button */
+    border-color: #00802f;
+    border-style: solid;
+    border-radius: 100px; /* Rounds the corners of the button */
+    color: green; /* Sets the text color of the button */
+    padding: 8px 12px; /* Adds padding inside the button */
+    font-size: 16px; /* Sets font size */
+    text-align: center;
+    margin-left: 10px; /* Adds some space between the Send button and History button */
+    transition: all 250ms;
+    font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
+    padding: 7px 20px;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    display: inline-block;
+
+  }
+
+  
+  .history:active {
+      transform: scale(0.95);
+  }
   .button-container {
     display: flex; /* Enables Flexbox layout */
     justify-content: center; /* Centers the buttons horizontally */
