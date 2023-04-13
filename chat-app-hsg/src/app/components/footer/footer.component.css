@@ -17,6 +17,7 @@ footer {
 
   .impressum {
     color: #ffffff;
+    font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
   }
   
   .footer-links {
@@ -28,6 +29,7 @@ footer {
   .footer-links a {
     color: #ffffff; /* Set the text color for footer links */
     text-decoration: none; /* Remove underline from links */
+    font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
   }
   
   .footer-links a:hover {

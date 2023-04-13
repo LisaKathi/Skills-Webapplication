@@ -31,6 +31,7 @@ header {
     color: #333; /* Set the text color for navigation links */
     text-decoration: none; /* Remove underline from links */
     padding: 0.25rem 0.5rem; /* Add padding around links for a larger click area */
+    font-family: 'Inder', sans-serif;
   }
   
   .nav-links a:hover,
