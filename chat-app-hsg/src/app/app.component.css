@@ -1,0 +1,15 @@
+main {
+    min-height: 150px;
+  }
+  
+main .title{
+  color: #00802f;
+  text-align: center;
+}
+
+main .col{
+    color: #000000;
+    text-align: center;
+
+  }
+  

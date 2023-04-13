@@ -9,7 +9,7 @@
 -->
 
 
-<input [ngModel]="inputText" (ngModelChange)="inputText=$event" class="chat-box" maxlength="280" style="height: 38px;" />
+<input [ngModel]="inputText" (ngModelChange)="inputText=$event" class="chat-box" maxlength="280" placeholder="Nachricht eingeben" style="height: 38px;" />
 
 <div class="button-container">
     <input type="button" class="send" (click)="copyText()" value="Send">
