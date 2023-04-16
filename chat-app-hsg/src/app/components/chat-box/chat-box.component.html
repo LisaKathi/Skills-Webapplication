@@ -1,13 +1,3 @@
-<!--
-
-<input [ngModel]="inputText" (ngModelChange)="inputText=$event" class="chat-box" maxlength="280" />
-<div class="button-container">
-    <input type="button" class="send" (click)="copyText()" value="Send">
-    <input type="button" (click)="showHistory()" value="History">
-</div>
-<textarea [(ngModel)]="copiedText" class="chat-box history-box" rows="3" readonly></textarea>
--->
-
 <textarea [(ngModel)]="copiedText" class="chat-box history-box" rows="3" readonly></textarea>
 <input [ngModel]="inputText" (ngModelChange)="inputText=$event" class="chat-box" maxlength="280" placeholder="Nachricht eingeben" style="height: 38px;" />
 
