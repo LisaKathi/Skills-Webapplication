@@ -11,12 +11,12 @@
     margin-bottom: 10px; /* Adds some space between input boxes */
   }
   
-  .history-box {
-    background-color: #f8f9fa; /* Sets a light background color for the history box */
-    color: #343a40; /* Sets a dark text color for the history box */
-    height: calc(100% - 120px); /* Calculates the remaining height for the history box */
-    margin-bottom: 10px; /* Adds space between history box and buttons */
-  }
+ /* .history-box {
+    background-color: #f8f9fa; 
+    color: #343a40; 
+    height: calc(100% - 120px); 
+    margin-bottom: 10px;
+  } */
   
   .send {
     cursor: pointer; /* Changes the cursor to a hand when hovering over the button */
@@ -52,17 +52,17 @@
     transform: scale(0.95);
   }
 
-  .history {
-    cursor: pointer; /* Changes the cursor to a hand when hovering over the button */
-    background-color: white;/* Sets the background color of the button */
+  /* .history {
+    cursor: pointer; 
+    background-color: white;
     border-color: #00802f;
     border-style: solid;
-    border-radius: 100px; /* Rounds the corners of the button */
-    color: green; /* Sets the text color of the button */
-    padding: 8px 12px; /* Adds padding inside the button */
-    font-size: 16px; /* Sets font size */
+    border-radius: 100px; 
+    color: green; 
+    padding: 8px 12px; 
+    font-size: 16px; 
     text-align: center;
-    margin-left: 10px; /* Adds some space between the Send button and History button */
+    margin-left: 10px; 
     transition: all 250ms;
     font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
     padding: 7px 20px;
@@ -72,16 +72,31 @@
     touch-action: manipulation;
     display: inline-block;
 
-  }
+  } */
 
   
-  .history:active {
+  /*.history:active {
       transform: scale(0.95);
-  }
+  } */
+
   .button-container {
     display: flex; /* Enables Flexbox layout */
     justify-content: center; /* Centers the buttons horizontally */
     margin-bottom: 10px; /* Adds some space between the buttons and output box */
   }
   
-  
+  .history-box {
+    font-size: 16px;
+    font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
+    height: 100px;
+    width: 80%;
+    overflow-y: scroll;
+    border-radius: 1px;
+    margin-left: 140px;
+  }
+
+  .chat-box{
+    width: 80%;
+    margin-left: 140px;
+    border-radius: 15px;
+  }
