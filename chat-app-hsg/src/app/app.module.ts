@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ChatBoxComponent } from './components/chat-box/chat-box.component';
+import { ChatHistoryComponent } from './components/chat-history/chat-history.component'
+
 
 @NgModule({
   declarations: [
@@ -13,6 +15,7 @@ import { ChatBoxComponent } from './components/chat-box/chat-box.component';
     HeaderComponent,
     FooterComponent,
     ChatBoxComponent,
+    ChatHistoryComponent,
   ],
   imports: [
     BrowserModule,

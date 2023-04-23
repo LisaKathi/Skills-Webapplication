@@ -1,25 +1,29 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-chat-box',
   templateUrl: './chat-box.component.html',
-  styleUrls: ['./chat-box.component.css']
+  styleUrls: ['./chat-box.component.css'],
 })
 export class ChatBoxComponent {
-  inputText: string = '';
-  copiedText: string = '';
-  messageHistory: string[] = [];
+  @Output() submitMessage = new EventEmitter<string>();
 
-  copyText() {
-    if (this.inputText) {
-      this.messageHistory.push(this.inputText);
-      this.copiedText = this.inputText;
-      this.inputText = '';
+  public chatMessage = '';
+  public errorMessage = '';
+
+  public addMessage(message: string): void {
+    if (!message.trim()) {
+      this.errorMessage = 'Please add text!';
+      this.chatMessage = '';
+
+      return;
     }
-  }
 
-  showHistory() {
-    this.copiedText = this.messageHistory.join('\n');
+    const timestamp = new Date().toLocaleString('de');
+    const messageToSend = `${timestamp} - ${message}<br>`;
+
+    this.submitMessage.emit(messageToSend);
+    this.chatMessage = '';
+    this.errorMessage = '';
   }
-  
 }

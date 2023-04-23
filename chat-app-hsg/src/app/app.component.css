@@ -1,5 +1,5 @@
 main {
-    min-height: 150px;
+    min-height: 300px;
   }
   
 main .title{
@@ -13,7 +13,7 @@ main .col{
     color: #000000;
     text-align: center;
     font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
-    margin-bottom: 100px;
+    margin-bottom: 0px;
 
   }
   
