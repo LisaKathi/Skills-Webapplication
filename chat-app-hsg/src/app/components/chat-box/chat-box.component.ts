@@ -20,7 +20,7 @@ export class ChatBoxComponent {
     }
 
     const timestamp = new Date().toLocaleString('de');
-    const messageToSend = `${timestamp} - ${message}<br>`;
+    const messageToSend = `<small>${timestamp}</small> - ${message}<br>`;
 
     this.submitMessage.emit(messageToSend);
     this.chatMessage = '';
