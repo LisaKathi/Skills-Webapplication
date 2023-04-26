@@ -14,7 +14,7 @@ export class ChatBoxComponent {
 
   public addMessage(message: string): void {
     if (!message.trim()) {
-      this.errorMessage = 'Please add text!';
+      this.errorMessage = 'Bitte schreiben Sie eine Nachricht!';
       this.chatMessage = '';
 
       return;
