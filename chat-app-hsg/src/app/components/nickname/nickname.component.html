@@ -2,10 +2,12 @@
   [(ngModel)]="nickname"
   class="form-control"
   placeholder="Nickname eingeben"
+  maxlength="30"
+
 />
 <button
   class="erstellen"
-  (click)="createNickname(nickname)"
+  (click)="createNickname(nickname); onButtonClick()"
   [disabled]="!nickname"
 >
   create

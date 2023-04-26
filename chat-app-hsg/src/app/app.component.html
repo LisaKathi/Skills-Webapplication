@@ -16,7 +16,7 @@
   </div>
   <div class="row">
     <div class="col">
-      <app-chat-box (submitMessage)="messageSubmitted($event)"></app-chat-box>
+      <app-chat-box (submitMessage)="messageSubmitted($event)" [nickname]="nickname" ></app-chat-box>
     </div>
   </div>
 </main>

@@ -23,6 +23,7 @@
 .send {
   cursor: pointer; /* Changes the cursor to a hand when hovering over the button */
   background-color: #c2fbd7;/* Sets the background color of the button */
+  letter-spacing: 0.10rem;
   border-radius: 100px; /* Rounds the corners of the button */
   color: green; /* Sets the text color of the button */
   border: none; /* Removes the default button border */
