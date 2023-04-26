@@ -1,10 +1,13 @@
 .form-control {
-  height: 200px;
+  height: 300px;
   overflow: auto;
   border: 1px solid #ccc;
+  box-sizing: border-box;
   width: 80%;
-  margin-left: 150px;
+  margin: 0 10% 20px;
   border-radius: 15px;
-  margin-bottom: 20px;
+  text-align: left;
+  padding: 10px 20px;
 
+  
 }
