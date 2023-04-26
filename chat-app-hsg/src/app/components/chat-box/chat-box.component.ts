@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-chat-box',
@@ -6,6 +6,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./chat-box.component.css'],
 })
 export class ChatBoxComponent {
+  @Input() nickname = '';
   @Output() submitMessage = new EventEmitter<string>();
 
   public chatMessage = '';
@@ -19,8 +20,15 @@ export class ChatBoxComponent {
       return;
     }
 
+    if (!this.nickname) {
+      this.errorMessage = 'Bitte erstellen Sie einen Nickname!';
+      this.chatMessage = '';
+
+      return;
+    }
+
     const timestamp = new Date().toLocaleString('de');
-    const messageToSend = `<small>${timestamp}</small> - ${message}<br>`;
+    const messageToSend = `${timestamp}<br><strong>${this.nickname}:</strong> ${message}<br>`;
 
     this.submitMessage.emit(messageToSend);
     this.chatMessage = '';

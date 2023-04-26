@@ -9,7 +9,7 @@
 <div class="button-container">
 <button
   class="send"
-  [disabled]="!chatMessage.trim()"
+  [disabled]="!chatMessage.trim() || !nickname"
   (click)="addMessage(chatMessage)"
 >
   Senden
