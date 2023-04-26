@@ -12,7 +12,7 @@
   [disabled]="!chatMessage.trim() || !nickname"
   (click)="addMessage(chatMessage)"
 >
-  Senden
+  SEND
 </button>
 </div>
 <div *ngIf="errorMessage" class="alert alert-warning">{{ errorMessage }}</div>

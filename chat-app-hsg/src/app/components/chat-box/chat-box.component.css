@@ -26,13 +26,12 @@
   border-radius: 100px; /* Rounds the corners of the button */
   color: green; /* Sets the text color of the button */
   border: none; /* Removes the default button border */
-  padding: 8px 12px; /* Adds padding inside the button */
+  padding: 7px 20px; /* Adds padding inside the button */
   font-size: 16px; /* Sets font size */
   text-align: center;
   margin-left: 10px; /* Adds some space between the Send button and History button */
   transition: all 250ms;
   font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
-  padding: 7px 20px;
   text-decoration: none;
   user-select: none;
   -webkit-user-select: none;

@@ -1,4 +1,48 @@
-input + button,
+/*input + button,
 .alert {
   margin-top: 10px;
+} */
+
+.erstellen {
+  display: inline-block;
+  padding: 7px 10px;
+  border-radius: 10rem;
+  border-color:  #00802f;
+  color:  #00802f;
+  text-transform: uppercase;
+  font-size: 16px;
+  letter-spacing: 0.10rem;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+.erstellen:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  border-radius: 10rem;
+  z-index: -2;
+}
+.erstellen:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: #c2fbd7;
+  transition: all 0.3s;
+  border-radius: 10rem;
+  z-index: -1;
+}
+.erstellen:hover {
+  color: #00802f;
+}
+.erstellen:hover:before {
+  width: 100%;
 }

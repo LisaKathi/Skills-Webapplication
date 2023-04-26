@@ -4,10 +4,10 @@
   placeholder="Nickname eingeben"
 />
 <button
-  class="btn btn-primary"
+  class="erstellen"
   (click)="createNickname(nickname)"
   [disabled]="!nickname"
 >
-  Erstellen
+  create
 </button>
 <div *ngIf="message" class="alert alert-success">{{ message }}</div>
