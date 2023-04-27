@@ -5,6 +5,7 @@
   box-sizing: border-box;
   width: 80%;
   margin: 50px 10% 20px;
+  position: absolute;
   border-radius: 15px;
   text-align: left;
   padding: 10px 20px;

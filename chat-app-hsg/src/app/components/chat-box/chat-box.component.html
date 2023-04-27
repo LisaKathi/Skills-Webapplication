@@ -6,7 +6,6 @@
   [(ngModel)]="chatMessage"
   (keyup.enter)="addMessage(chatMessage)"
 ></textarea>
-<div class="button-container">
 <button
   class="send"
   [disabled]="!chatMessage.trim() || !nickname"
@@ -14,5 +13,4 @@
 >
   SEND
 </button>
-</div>
 <div *ngIf="errorMessage" class="alert alert-warning">{{ errorMessage }}</div>
