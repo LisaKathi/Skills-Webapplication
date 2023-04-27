@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Output,  ElementRef, Renderer2 } from '@angular/core';
-import { MouseEvent, MouseEventHandler } from 'react';
 
 @Component({
   selector: 'app-nickname',
