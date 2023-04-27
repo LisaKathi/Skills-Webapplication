@@ -22,7 +22,7 @@ export class NicknameComponent {
 
   constructor(private el: ElementRef, private renderer: Renderer2) {}
 
-  onButtonClick() {
+  animateButton() {
     const button = this.el.nativeElement.querySelector('.erstellen');
     //this.preventDefault()
     this.renderer.removeClass(button, 'animate');
