@@ -11,6 +11,7 @@ export class ChatBoxComponent {
 
   public chatMessage = '';
   public errorMessage = '';
+  private isFirstMessage = true;
 
   public addMessage(message: string): void {
     if (!message.trim()) {
@@ -27,8 +28,15 @@ export class ChatBoxComponent {
       return;
     }
 
-    const timestamp = new Date().toLocaleString('de');
-    const messageToSend = `${timestamp}<br><strong>${this.nickname}:</strong> ${message}<br>`;
+    const timestamp = new Date().toLocaleTimeString('de', { hour: 'numeric', minute: 'numeric' }); // format time to show only hours and minutes
+    let messageToSend = '';
+    if (this.isFirstMessage) {
+      const date = new Date().toLocaleDateString('de');
+      messageToSend = `${date}<br><strong>${this.nickname}:</strong> ${message} - <small>${timestamp}</small><br>`; // append date to the first message
+      this.isFirstMessage = false;
+    } else {
+      messageToSend = `<strong>${this.nickname}:</strong> ${message} - <small>${timestamp}</small><br>`; // skip date for subsequent messages
+    }
 
     this.submitMessage.emit(messageToSend);
     this.chatMessage = '';
