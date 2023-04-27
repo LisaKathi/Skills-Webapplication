@@ -17,7 +17,7 @@ export class NicknameComponent {
     // Person.Nickname = nickname;
       this.nicknameCreate.emit(nickname);
       setTimeout(() => {
-        this.message = `Herzlich willkommen '${nickname}'!`;
+        this.message = `Herzlich willkommen ${nickname}!`;
     }, 2150);
   }
 
