@@ -7,22 +7,24 @@
   padding: 10px; /* Adds padding inside the input boxes */
   border: 1px solid #ccc; /* Sets a light grey border */
   box-sizing: border-box; /* Ensures padding and border are included in width */
-  margin-bottom: 10px; /* Adds some space between input boxes */
+  position: absolute;
+  top: 650px;
+  left: 160px;
   width: 80%;
-  margin-left: 0px;
   border-radius: 15px;
 }
 
-.button-container {
-  display: flex; /* Enables Flexbox layout */
-  justify-content: center; /* Centers the buttons horizontally */
-  margin-bottom: 10px; /* Adds some space between the buttons and output box */
-}
+/*.button-container {
+  display: flex; 
+  justify-content: center; 
+  margin-bottom: 10px; 
+}*/
 
 
 .send {
   cursor: pointer; /* Changes the cursor to a hand when hovering over the button */
   background-color: #c2fbd7;/* Sets the background color of the button */
+  position: relative;
   letter-spacing: 0.10rem;
   border-radius: 100px; /* Rounds the corners of the button */
   color: green; /* Sets the text color of the button */
@@ -30,7 +32,7 @@
   padding: 7px 20px; /* Adds padding inside the button */
   font-size: 16px; /* Sets font size */
   text-align: center;
-  margin-left: 10px; /* Adds some space between the Send button and History button */
+  margin-top: 430px;
   transition: all 250ms;
   font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
   text-decoration: none;
