@@ -1,1 +1,3 @@
-<div class="form-control" [innerHTML]="history"></div>
+<div class="wrapper" >
+<div class="form-control" [innerHTML]="history" #scrollMe [scrollTop]="scrollMe.scrollHeight" ></div>
+</div>

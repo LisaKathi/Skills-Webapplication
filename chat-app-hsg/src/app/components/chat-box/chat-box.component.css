@@ -8,7 +8,7 @@
   border: 1px solid #ccc; /* Sets a light grey border */
   box-sizing: border-box; /* Ensures padding and border are included in width */
   position: absolute;
-  top: 650px;
+  top: 670px;
   left: 160px;
   width: 80%;
   border-radius: 15px;
@@ -24,7 +24,7 @@
 .send {
   cursor: pointer; /* Changes the cursor to a hand when hovering over the button */
   background-color: #c2fbd7;/* Sets the background color of the button */
-  position: relative;
+  position: absolute;
   letter-spacing: 0.10rem;
   border-radius: 100px; /* Rounds the corners of the button */
   color: green; /* Sets the text color of the button */
@@ -32,7 +32,8 @@
   padding: 7px 20px; /* Adds padding inside the button */
   font-size: 16px; /* Sets font size */
   text-align: center;
-  margin-top: 430px;
+  top: 750px;
+  left: 730px;
   transition: all 250ms;
   font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
   text-decoration: none;
