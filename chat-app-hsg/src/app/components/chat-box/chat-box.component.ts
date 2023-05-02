@@ -41,5 +41,6 @@ export class ChatBoxComponent {
     this.submitMessage.emit(messageToSend);
     this.chatMessage = '';
     this.errorMessage = '';
+
   }
 }

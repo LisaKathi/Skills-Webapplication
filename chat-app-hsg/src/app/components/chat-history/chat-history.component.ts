@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, ElementRef, Input } from '@angular/core';
 
 @Component({
   selector: 'app-chat-history',
@@ -7,4 +7,6 @@ import { Component, Input } from '@angular/core';
 })
 export class ChatHistoryComponent {
   @Input() history = '';
+
+
 }

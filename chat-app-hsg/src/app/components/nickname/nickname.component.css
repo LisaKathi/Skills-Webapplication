@@ -108,6 +108,7 @@
   -webkit-animation-fill-mode: forwards;
 }
 
+
 .erstellen.animate:before {
   position: absolute;
   content: "";
@@ -168,8 +169,3 @@
   -webkit-transform: translate(-50%, -50%) rotate(1080deg) scale(0);
 }
 }
-
-
-
-
-
