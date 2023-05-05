@@ -3,7 +3,7 @@
   class="form-control"
   placeholder="Nickname eingeben"
   maxlength="30"
-
+  (keyup.enter)="createNickname(nickname); animateButton()"
 />
 <button
   class="erstellen"

@@ -20,6 +20,12 @@
   margin-bottom: 10px; 
 }*/
 
+.charremain {
+  position: absolute;
+  top: 750px;
+  left: 1325px;
+  font-size: 13.5px;
+}
 
 .send {
   cursor: pointer; /* Changes the cursor to a hand when hovering over the button */

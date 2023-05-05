@@ -1,17 +1,27 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
+
 @Component({
   selector: 'app-chat-box',
   templateUrl: './chat-box.component.html',
   styleUrls: ['./chat-box.component.css'],
 })
+
 export class ChatBoxComponent {
   @Input() nickname = '';
   @Output() submitMessage = new EventEmitter<string>();
 
+
   public chatMessage = '';
   public errorMessage = '';
   private isFirstMessage = true;
+
+  maxCharacters: number = 200;
+  remainingCharacters: number = this.maxCharacters;
+
+  updateCharacterCount(): void {
+    this.remainingCharacters = this.maxCharacters - this.chatMessage.length;
+  }
 
   public addMessage(message: string): void {
     if (!message.trim()) {
@@ -43,4 +53,6 @@ export class ChatBoxComponent {
     this.errorMessage = '';
 
   }
+
+
 }
