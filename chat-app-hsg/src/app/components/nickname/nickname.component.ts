@@ -8,20 +8,26 @@ import { Router } from '@angular/router';
 })
 
 export class NicknameComponent {
+  
   @Output() public nicknameCreate = new EventEmitter<string>();
 
   public nickname = '';
   public message = '';
 
+
+
+  constructor(private el: ElementRef, private renderer: Renderer2, private router: Router) { }
+
+
   public createNickname(nickname: string): void {
     // Person.Nickname = nickname;
-      this.nicknameCreate.emit(nickname);
+        this.nicknameCreate.emit(nickname);
+
       setTimeout(() => {
         this.message = `Herzlich willkommen, ${nickname}!`;
     }, 2150);
   }
 
-  constructor(private el: ElementRef, private renderer: Renderer2, private router: Router) {}
 
   animateButton() {
     const button = this.el.nativeElement.querySelector('.erstellen');
@@ -39,9 +45,10 @@ export class NicknameComponent {
     const button = this.el.nativeElement.querySelector('.erstellen');
 
     setTimeout(() => {
-      window.open('http://localhost:4200/start', '_blank');
-    }, 3000); 
+      this.router.navigate(['/start'], { queryParams: { nickname: this.nickname } });
+    }, 3000);
   }
+  
 
   }
 
