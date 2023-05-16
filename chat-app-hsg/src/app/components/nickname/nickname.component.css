@@ -3,24 +3,38 @@
   margin-top: 10px;
 } */
 
+.nn {
+  padding: 0px;
+  gap: 24px;
+  position: relative;
+  width: 550px;
+  height: 28px;
+  
+}
 
 .form-control{
   resize: none; /* Disables manual resizing */
   font-size: 13px; /* Sets font size */
   font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
-  padding: 5px; /* Adds padding inside the input boxes */
   border: 1px solid #ccc; /* Sets a light grey border */
   box-sizing: border-box; /* Ensures padding and border are included in width */
   margin-bottom: 10px; /* Adds some space between input boxes */
   width: 15%;
   margin: 0px 10px 10px 0px;
-  border-radius: 10px;
+  border-radius: 10rem;
+  position: absolute;
+  top: 590px;
+  left: 250px;
+  padding: 7px 10px;
+  height: 35px
 }
 
 .alert-success{
   font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
   font-size: 16px;
-
+  position: absolute;
+  top: 629px;
+  left: 260px;
 }
 
 .erstellen {
@@ -34,7 +48,9 @@
   font-size: 16px;
   letter-spacing: 0.10rem;
   transition: all 0.3s;
-  position: relative;
+  position: absolute;
+  top: 590px;
+  left: 530px;
   overflow: hidden;
   z-index: 1;
   -webkit-appearance: none;

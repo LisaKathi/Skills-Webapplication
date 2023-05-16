@@ -1,23 +1,5 @@
 <app-header></app-header>
 <main>
-  <div class="title">
-    <h1>HSG Chatapplikation</h1>
-  </div>
-  <div class="col">
-    <p>Schnell und einfach mit Deinen Freunden chatten!</p>
-  </div>
-  <div class="row">
-      <div class="col-md-4">
-        <app-nickname (nicknameCreate)="nicknameCreated($event)"></app-nickname>
-      </div>
-    <div class="col">
-      <app-chat-history [history]="messageHistory"></app-chat-history>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col">
-      <app-chat-box (submitMessage)="messageSubmitted($event)" [nickname]="nickname" ></app-chat-box>
-    </div>
-  </div>
+  <router-outlet></router-outlet>
 </main>
 <app-footer></app-footer>

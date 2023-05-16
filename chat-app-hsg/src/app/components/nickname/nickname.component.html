@@ -3,13 +3,13 @@
   class="form-control"
   placeholder="Nickname eingeben"
   maxlength="30"
-  (keyup.enter)="createNickname(nickname); animateButton()"
+  (keyup.enter)="createNickname(nickname); animateButton(); redirectToStart()"
 />
 <button
   class="erstellen"
-  (click)="createNickname(nickname); animateButton()"
+  (click)="createNickname(nickname); animateButton(); redirectToStart()"
   [disabled]="!nickname"
 >
-  create
+  CHAT STARTEN
 </button>
 <div *ngIf="message" class="alert alert-success">{{ message }}</div>

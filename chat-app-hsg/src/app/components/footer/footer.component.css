@@ -17,19 +17,27 @@ footer {
 
   .impressum {
     color: #ffffff;
-    font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
+    font-family: 'Outfit', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 150%;
   }
   
   .footer-links {
     list-style-type: none; /* Remove bullet points from the list */
     display: flex; /* Use flexbox for layout */
-    gap: 1rem; /* Add space between list items */
+    gap: 2.5rem; /* Add space between list items */
   }
   
   .footer-links a {
     color: #ffffff; /* Set the text color for footer links */
     text-decoration: none; /* Remove underline from links */
-    font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
+    font-family: 'Outfit', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 150%;
   }
   
   .footer-links a:hover {

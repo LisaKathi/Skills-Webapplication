@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Output,  ElementRef, Renderer2 } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nickname',
@@ -16,11 +17,11 @@ export class NicknameComponent {
     // Person.Nickname = nickname;
       this.nicknameCreate.emit(nickname);
       setTimeout(() => {
-        this.message = `Herzlich willkommen ${nickname}!`;
+        this.message = `Herzlich willkommen, ${nickname}!`;
     }, 2150);
   }
 
-  constructor(private el: ElementRef, private renderer: Renderer2) {}
+  constructor(private el: ElementRef, private renderer: Renderer2, private router: Router) {}
 
   animateButton() {
     const button = this.el.nativeElement.querySelector('.erstellen');
@@ -34,6 +35,13 @@ export class NicknameComponent {
     }, 6000);
   }
 
+  redirectToStart() {
+    const button = this.el.nativeElement.querySelector('.erstellen');
+
+    setTimeout(() => {
+      window.open('http://localhost:4200/start', '_blank');
+    }, 3000); 
+  }
 
   }
 

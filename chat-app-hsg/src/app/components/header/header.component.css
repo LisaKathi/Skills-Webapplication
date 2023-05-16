@@ -24,7 +24,7 @@ header {
     list-style-type: none; /* Remove bullet points from the list */
     display: flex; /* Use flexbox for layout */
     align-items: center; /* Vertically align items */
-    gap: 1rem; /* Add space between list items */
+    gap: 3rem; /* Add space between list items */
     cursor: pointer; /* Changes the cursor to a hand when hovering over the button */
   }
   
@@ -32,8 +32,12 @@ header {
     color: #333; /* Set the text color for navigation links */
     text-decoration: none; /* Remove underline from links */
     padding: 0.25rem 0.5rem; /* Add padding around links for a larger click area */
-    font-family: 'Inder', sans-serif;
     cursor: pointer;
+    font-family: 'Outfit', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 150%;
   }
   
   .nav-links a:hover,
