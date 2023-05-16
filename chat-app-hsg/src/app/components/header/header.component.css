@@ -1,48 +1,121 @@
-header {
-    background-color: #ffffff; /* Set the background color of the header */
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1); /* Add a subtle box shadow for depth */
-  }
-  
-  .header-container {
-    display: flex; /* Use flexbox for layout */
-    justify-content: space-between; /* Space elements evenly horizontally */
-    align-items: center; /* Vertically align items */
-    max-width: 1200px; /* Set the maximum width of the container */
-    margin: 0 auto; /* Center the container horizontally */
-    padding: 1rem; /* Add padding around the container */
-  }
-  
-  .logo {
-    display: inline-flex; /* Make the logo inline-flex for better positioning */
-  }
-  
-  .logo img {
-    height: 50px; /* Set the height of the logo image */
-  }
-  
-  .nav-links {
-    list-style-type: none; /* Remove bullet points from the list */
-    display: flex; /* Use flexbox for layout */
-    align-items: center; /* Vertically align items */
-    gap: 3rem; /* Add space between list items */
-    cursor: pointer; /* Changes the cursor to a hand when hovering over the button */
-  }
-  
-  .nav-links a {
-    color: #333; /* Set the text color for navigation links */
-    text-decoration: none; /* Remove underline from links */
-    padding: 0.25rem 0.5rem; /* Add padding around links for a larger click area */
-    cursor: pointer;
-    font-family: 'Outfit', sans-serif;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 150%;
-  }
-  
-  .nav-links a:hover,
-  .nav-links .active {
-    color: #00802f; /* Change the color when the link is hovered or active */
-    border-bottom: 2px solid #00802f; /* Add a border at the bottom of the active link */
-  }
-  
+.navbar {
+  width: 100%;
+  max-width: 1440px;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  background-color: #fff;
+  justify-content: center;
+  align-items: flex-start;
+  padding-left: 24px;
+  padding-right: 24px;
+  display: flex;
+  position: relative;
+  top: 0%;
+  bottom: auto;
+  left: 5.5%;
+  right: 5.5%;
+}
+
+.navbarcontainer {
+  width: 100%;
+  max-width: 1200px;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.navbar-content {
+  width: 100%;
+  max-width: 1200px;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+}
+
+.navbar-logo {
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  flex: 0 auto;
+  justify-content: flex-start;
+  align-items: flex-start;
+  display: flex;
+}
+
+.vectors-wrapper {
+  height: 53px;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  object-fit: cover;
+  flex: 0 auto;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.navbar-menu {
+  grid-column-gap: 32px;
+  grid-row-gap: 32px;
+  flex: 0 auto;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 8px;
+  display: flex;
+}
+
+.navbar-link {
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  flex: 0 auto;
+  justify-content: flex-start;
+  align-items: flex-start;
+  text-decoration: none;
+  padding: 24px 12px;
+  display: flex;
+  transition: color .35s;
+}
+
+.navbar-link-text {
+  color: #000;
+  font-family: Outfit, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 150%;
+  transition: background-color .35s;
+}
+
+.navbar-link-text:hover {
+  color: #00802f;
+}
+
+.navbar-button {
+  grid-column-gap: 8px;
+  grid-row-gap: 8px;
+  background-color: #00802f;
+  border-radius: 100px;
+  flex: 0 auto;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  padding: 8px 20px;
+  display: flex;
+}
+
+.navbar-button.navbar-button-text:hover {
+  background-color: #c2fbd7;
+}
+
+.navbar-button-text {
+  color: #fff;
+  text-transform: uppercase;
+  font-family: Outfit, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 140%;
+  transition: background-color .35s;
+}
+
+.navbar-button-text:hover {
+  color: #000;
+}
