@@ -1,7 +1,7 @@
 footer {
     background-color: #00802f; /* Set the background color of the footer */
     padding: 1rem 0; /* Add padding to the top and bottom of the footer */
-    position: relative; /* Position the footer relatively */
+    position: absolute; /* Position the footer absolutely */
     bottom: 0; /* Stick the footer to the bottom of the page */
     width: 100%; /* Make the footer span the full width of the page */
   }
@@ -44,3 +44,97 @@ footer {
     color: #000000; /* Change the color when the link is hovered */
   }
   
+  .footer {
+    width: 100%;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    background-color: #00802f;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 24px;
+    padding-right: 24px;
+    display: flex;
+    position: absolute;
+    top: auto;
+    bottom: 0%;
+    left: 0%;
+    right: 0%;
+  }
+
+  .navbarcontainer {
+    width: 100%;
+    max-width: 1200px;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  }
+  
+  .navbar-content {
+    width: 100%;
+    max-width: 1200px;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+  }
+  
+  .navbar-logo {
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    flex: 0 auto;
+    justify-content: flex-start;
+    align-items: flex-start;
+    display: flex;
+  }
+
+  .copyright {
+    width: 100%;
+    max-width: 567px;
+    grid-column-gap: 32px;
+    grid-row-gap: 32px;
+    justify-content: center;
+    align-items: center;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    display: flex;
+  }
+  
+  .copyright-text {
+    color: #fff;
+    font-family: Outfit, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 150%;
+  }
+  
+  .footer-menu {
+    grid-column-gap: 32px;
+    grid-row-gap: 32px;
+    flex: 0 auto;
+    justify-content: flex-start;
+    align-items: center;
+    display: flex;
+  }
+  
+  .footer-link {
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    flex: 0 auto;
+    justify-content: flex-start;
+    align-items: flex-start;
+    text-decoration: none;
+    padding: 24px 12px;
+    display: flex;
+  }
+
+  .footer-link-text {
+    color: #fff;
+    cursor: pointer;
+    font-family: Outfit, sans-serif;
+    font-weight: 600;
+  }
+  
+  .footer-link-text:hover {
+    color: #000;
+  }
