@@ -1,70 +1,70 @@
-
 .not-found-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    font-family: Outfit, sans-serif;
-  }
-  
-  .not-found-title {
-    font-size: 4rem;
-    margin-bottom: 1rem;
-  }
-  
-  .not-found-message {
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
-  }
-  
-  .btn-not-found {
-    cursor: pointer;
-    display: inline-block;
-    text-decoration: none;
-    padding: 7px 10px;
-    border-radius: 10rem;
-    /*border: 2px solid #00802f;*/
-    color:  #fff;
-    text-transform: uppercase;
-    font-size: 14px;
-    font-weight: bold;
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
-    transition: background-color 0.35s, color 0.35s
-  }
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+}
 
-  .btn-not-found:hover {
-    color: #000;
-  }
-  .btn-not-found:hover:before {
-    width: 100%;
-  } 
-  .btn-not-found:after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #00802f;
-    border-radius: 10rem;
-    z-index: -2;
-  }
-  .btn-not-found:before {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0%;
-    height: 100%;
-    background-color: #c2fbd7;
-    border-radius: 10rem;
-    z-index: -1;
-  }
-  .btn-not-found:focus{
-    outline: 0;
-  }
-  
+.not-found-title {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.not-found-message {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.btn-not-found {
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+  padding: 7px 10px;
+  border-radius: 10rem;
+  border: 2px solid #00802f;
+  color:  #00802f;
+  text-transform: uppercase;
+  font-size: 16px;
+  letter-spacing: 0.10rem;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: border-radius linear 0.05s, width linear 0.05s;
+}
+
+
+.btn-not-found:hover {
+  color: #00802f;
+}
+.btn-not-found:hover:before {
+  width: 100%;
+} 
+.btn-not-found:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fefefe;
+  border-radius: 10rem;
+  z-index: -2;
+}
+.btn-not-found:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: #c2fbd7;
+  transition: all 0.3s;
+  border-radius: 10rem;
+  z-index: -1;
+}
+.btn-not-found:focus{
+  outline: 0;
+}

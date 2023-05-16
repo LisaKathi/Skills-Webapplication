@@ -3,20 +3,17 @@
 }
 
 .form-control {
-  height: 400px;
+  height: 300px;
   overflow: auto;
   border: 1px solid #ccc;
   box-sizing: border-box;
-  width: 72%;
-  margin: 50px 14% 0px;
-  position: relative;
+  width: 60%;
+  /*margin: 50px 10% 20px;*/
+  position: absolute;
   top: 360px;
-  left: 160px;
+  left: 340px;
   border-radius: 15px;
   text-align: left;
   padding: 10px 20px;
-  display: flex;
-  justify-content: center;
 
 }
-

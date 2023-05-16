@@ -7,18 +7,18 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./chat-page.component.css']
 })
 
-  export class ChatPageComponent {
-    public nn!: string;
+export class ChatPageComponent {
+  public nn!: string;
 
-  constructor(private route: ActivatedRoute) { }
+constructor(private route: ActivatedRoute) { }
 
-  ngOnInit() {
-    this.route.queryParams.subscribe(params => {
-      this.nn = params['nickname'];
-    });
-  }
-  
-  }
+ngOnInit() {
+  this.route.queryParams.subscribe(params => {
+    this.nn = params['nickname'];
+  });
+}
+
+}
   
 
 
