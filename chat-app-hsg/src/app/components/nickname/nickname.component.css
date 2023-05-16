@@ -42,7 +42,8 @@
   display: inline-block;
   padding: 7px 10px;
   border-radius: 100px;
-  border: 2px solid #00802f;
+  /*border: 2px solid #00802f;*/
+  border: none;
   /*color:  #00802f;*/
   color: #fff;
   background-color: #00802f;
@@ -93,8 +94,9 @@
   height: 100%;
   background-color: #c2fbd7;
   /*transition: all 0.3s;*/
-  border-radius: 10rem;
+  border-radius: 100px;
   z-index: -1;
+  
 }
 
 .erstellen:focus{
