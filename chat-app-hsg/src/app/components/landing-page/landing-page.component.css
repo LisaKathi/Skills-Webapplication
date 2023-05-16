@@ -5,7 +5,7 @@
     }
 
     .wrapper-btn-headings{
-    float:left; 
+    float:left;
     }
 
     .wrapper-main{
@@ -13,7 +13,7 @@
         top: 200px;
         left: 250px;
     }
-    
+
     .mainhead{
     font-family: 'Outfit', sans-serif;
     font-style: normal;
@@ -23,6 +23,7 @@
     text-transform: uppercase;
     color: #00802F;
     margin: 0;
+    padding-bottom: 30px;
     }
     
     .subhead {
@@ -36,19 +37,18 @@
     }
 
     .subhead2{
-
     width: 550px;
     height: 28px; 
     font-family: 'Outfit', sans-serif;
     font-style: normal;
-    font-weight: 700;
-    font-size: 29px;
+    font-weight: 800;
+    font-size: 35px;
     line-height: 97%;  
     text-transform: uppercase;
     color: #00802F;
     margin-bottom: 30px;
     }
-    
+
     .btn-start{
     display: inline-block;
     justify-content: center;
@@ -69,12 +69,13 @@
     
     }
     
-    .wrapper-btn-headings{
+    .wrapper-btn-elements{
+    float: left;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     padding: 0px;
-    gap: 59px;
+    gap: 90px;
 
     width: 650px;
     height: 500px;
