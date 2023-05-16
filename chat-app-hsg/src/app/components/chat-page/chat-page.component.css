@@ -2,10 +2,24 @@ h1 {
     font-family: 'Outfit', sans-serif;
     font-style: normal;
     font-weight: 800;
-    font-size: 40px;
+    font-size: 56px;
     line-height: 97%;
+    text-transform: uppercase;
     color: #00802F;
-    position: absolute;
-    top: 150px;
-    left: 157px;
+    margin: 50px 24px 0px;
+    padding-bottom: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+h2{
+    font-family: 'Outfit', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 150%;
+    color: #212121;
+    display: flex;
+    justify-content: center;
+    margin: 0;
 }
