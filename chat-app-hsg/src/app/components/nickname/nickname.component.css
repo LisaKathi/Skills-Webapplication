@@ -14,12 +14,12 @@
 
 .form-control{
   resize: none; /* Disables manual resizing */
-  font-size: 13px; /* Sets font size */
-  font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
+  font-size: 14px; /* Sets font size */
+  font-family: Outfit, sans-serif;
   border: 1px solid #ccc; /* Sets a light grey border */
   box-sizing: border-box; /* Ensures padding and border are included in width */
   margin-bottom: 10px; /* Adds some space between input boxes */
-  width: 15%;
+  width: 13%;
   margin: 0px 10px 10px 0px;
   border-radius: 10rem;
   position: absolute;
@@ -30,21 +30,21 @@
 }
 
 .alert-success{
-  font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
+  font-family: Outfit, sans-serif;
   font-size: 16px;
   position: absolute;
   top: 629px;
-  left: 260px;
+  left: 250px;
 }
 
 .chars{
-  font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
+  font-family: Outfit, sans-serif;
   font-size: 16px;
   color: #ccc;
   position: absolute;
   margin-left: 0px;
   top: 597px;
-  left: 445px;
+  left: 410px;
   text-align: left;
 
 }
@@ -53,23 +53,24 @@
   display: inline-block;
   padding: 7px 10px;
   border-radius: 10rem;
-  border: 2px solid #00802f;
-  color:  #00802f;
+  color:  #fff;
   text-transform: uppercase;
-  font-size: 16px;
-  letter-spacing: 0.10rem;
+  border: 2px solid #00802f;
+  font-size: 14px;
+  font-weight: bold;
+  /*letter-spacing: 0.10rem;*/
   transition: all 0.3s;
   position: absolute;
   top: 590px;
-  left: 530px;
+  left: 485px;
   overflow: hidden;
   z-index: 1;
   -webkit-appearance: none;
-  transition: border-radius linear 0.05s, width linear 0.05s;
+  /*transition: border-radius linear 0.05s, width linear 0.05s;*/
 }
 
 .erstellen:hover {
-  color: #00802f;
+  color: #000;
 }
 .erstellen:hover:before {
   width: 100%;
@@ -81,7 +82,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #fefefe;
+  background-color: #00802f;
   border-radius: 10rem;
   z-index: -2;
 }
@@ -93,7 +94,7 @@
   width: 0%;
   height: 100%;
   background-color: #c2fbd7;
-  transition: all 0.3s;
+  /*transition: all 0.3s;*/
   border-radius: 10rem;
   z-index: -1;
 }
