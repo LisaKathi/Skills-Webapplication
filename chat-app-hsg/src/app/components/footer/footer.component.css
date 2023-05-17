@@ -1,7 +1,7 @@
 footer {
   background-color: #00802f; /* Set the background color of the footer */
   padding: 1rem 0; /* Add padding to the top and bottom of the footer */
-  position: relative; /* Position the footer relatively */
+  position: absolute; /* Position the footer aboslute */
   bottom: 0; /* Stick the footer to the bottom of the page */
   width: 100%; /* Make the footer span the full width of the page */
 }
