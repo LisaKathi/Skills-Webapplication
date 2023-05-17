@@ -18,6 +18,7 @@ p {
     font-size: 19px;
     line-height: 97%;
     text-align: center; 
+    margin-bottom: 30px;
 
 }
 a {
@@ -26,29 +27,33 @@ a {
     font-style: normal;
     text-decoration: none;
     display: inline-block;
-    padding: 7px 10px;
+    padding: 5px 10px;
     border-radius: 10rem;
     border: 2px solid #00802f;
     background-color:#00802f;
     color:  white;
     text-transform: uppercase;
-    font-size: 16px;
-    letter-spacing: 0.10rem;
-    transition: all 0.3s;
+    font-size: 14px;
+    font-weight: bold;
     position: absolute;
-    top: 220px;
-    left: 1050px;
+    top: 223px;
+    left: 1015px;
     margin-left: 10px;
     overflow: hidden;
     z-index: 1;
     -webkit-appearance: none;
-    transition: border-radius linear 0.05s, width linear 0.05s;
+    transition: background-color 0.3s, color 0.3s;
 
+}
+a:hover{
+    color: black;
+    background-color: #c2fbd7;
+    transform: scale(1.05) rotate(-1deg);
 }
 
 a:active{
+    background-color: #6dba8a;
     transform: scale(0.95);
-
 }
 .wrapper {
 
