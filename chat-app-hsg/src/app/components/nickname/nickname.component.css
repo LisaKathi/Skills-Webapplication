@@ -32,12 +32,22 @@
 .alert-success{
   font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
   font-size: 16px;
-
   position: absolute;
   top: 629px;
   left: 260px;
 }
 
+.chars{
+  font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
+  font-size: 16px;
+  color: #ccc;
+  position: absolute;
+  margin-left: 0px;
+  top: 597px;
+  left: 445px;
+  text-align: left;
+
+}
 .erstellen {
   cursor: pointer;
   display: inline-block;
