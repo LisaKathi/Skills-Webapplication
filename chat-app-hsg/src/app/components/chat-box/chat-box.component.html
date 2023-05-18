@@ -10,7 +10,6 @@
 
 <button
   class="send"
-  [disabled]="!chatMessage.trim() || !nickname"
   (click)="addMessage(chatMessage)"
 >
   SENDEN

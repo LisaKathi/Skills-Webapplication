@@ -16,7 +16,7 @@ export class ChatBoxComponent {
   public errorMessage = '';
   private isFirstMessage = true;
 
-  maxCharacters: number = 200;
+  maxCharacters: number = 1000;
   remainingCharacters: number = this.maxCharacters;
 
   updateCharacterCount(): void {
