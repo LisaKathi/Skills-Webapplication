@@ -5,7 +5,8 @@
   placeholder="Nachricht eingeben"
   [(ngModel)]="chatMessage"
   (keyup.enter)="addMessage(chatMessage)"
-  (keyup)="updateCharacterCount()"
+  (input)="onTextInput($event)"
+
 ></textarea>
 
 <button
@@ -15,5 +16,5 @@
   SENDEN
 </button>
 <span class=charremain>
-  {{ remainingCharacters }}/{{maxCharacters}}</span>
+  {{ characterCount }}/{{maxCharacterLimit}}</span>
 <div *ngIf="errorMessage" class="alert alert-warning">{{ errorMessage }}</div>

@@ -16,11 +16,16 @@ export class ChatBoxComponent {
   public errorMessage = '';
   private isFirstMessage = true;
 
-  maxCharacters: number = 1000;
-  remainingCharacters: number = this.maxCharacters;
+  public characterCount = 0;
+  public maxCharacterLimit = 1000;
 
-  updateCharacterCount(): void {
-    this.remainingCharacters = this.maxCharacters - this.chatMessage.length;
+  public onTextInput(event: any): void {
+    this.characterCount = this.chatMessage.length;
+
+    if (this.characterCount >= this.maxCharacterLimit) {
+      event.target.value = event.target.value.slice(0, this.maxCharacterLimit);
+      this.characterCount = this.maxCharacterLimit;
+    }
   }
 
   public addMessage(message: string): void {
