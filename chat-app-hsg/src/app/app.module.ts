@@ -9,7 +9,6 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ChatBoxComponent } from './components/chat-box/chat-box.component';
-import { ChatHistoryComponent } from './components/chat-history/chat-history.component';
 import { NicknameComponent } from './components/nickname/nickname.component';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -23,7 +22,6 @@ import { ChatPageComponent } from './components/chat-page/chat-page.component';
     HeaderComponent,
     FooterComponent,
     ChatBoxComponent,
-    ChatHistoryComponent,
     NicknameComponent,
     LandingPageComponent,
     HomePageComponent,

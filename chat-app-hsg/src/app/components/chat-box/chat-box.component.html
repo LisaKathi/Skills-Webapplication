@@ -1,5 +1,7 @@
-<div *ngFor="let message of messages">
-  <p [innerHTML]="message"></p>
+<div class="wrapper">
+  <div class="form-control" *ngFor="let message of messages">
+    <p [innerHTML]="message"></p>
+  </div>
 </div>
 
 <textarea
