@@ -21,7 +21,7 @@ export class ChatBoxComponent {
   constructor(private http: HttpClient, private route: ActivatedRoute) {}
 
   public chatMessage = '';
-  public messages: string[] = [];
+  public messages: { message: string, class: string }[] = [];
   public oldMessages: ChatMessage[] = [];
   public errorMessage = '';
   private isFirstMessage = true;
@@ -37,23 +37,11 @@ export class ChatBoxComponent {
 
     //load messages for user
     this.http
-      .get<ChatMessage[]>('http://localhost:3000/chatHistory/' + this.nickname)
+      .get<ChatMessage[]>('http://localhost:3000/chatHistory/')
       .subscribe(
         (data: ChatMessage[]) => {
           this.oldMessages = data;
           this.displayOldMessages();
-        },
-        (error: any) => {
-          console.error('Error:', error);
-        }
-      );
-
-    //test: getting all chatMessages
-    this.http
-      .get<ChatMessage[]>('http://localhost:3000/chatHistory/')
-      .subscribe(
-        (data: ChatMessage[]) => {
-          console.log(data);
         },
         (error: any) => {
           console.error('Error:', error);
@@ -93,7 +81,7 @@ export class ChatBoxComponent {
     };
 
     // send a POST request to the server
-    this.http.post('http://localhost:3000/history', newMessage).subscribe(
+    this.http.post('http://localhost:3000/chatHistory', newMessage).subscribe(
       (response) => {
         console.log(response);
       },
@@ -119,7 +107,7 @@ export class ChatBoxComponent {
       messageToSend = `<strong>${this.nickname}:</strong> ${message} - <small>${timestamp}</small><br>`; // skip date for subsequent messages
     }
 
-    this.addMessageToDisplay(messageToSend);
+    this.addMessageToDisplay(messageToSend, this.nickname);
 
     this.chatMessage = '';
     this.errorMessage = '';
@@ -128,26 +116,31 @@ export class ChatBoxComponent {
   public displayOldMessages(): void {
     this.oldMessages.forEach((oldMessage: ChatMessage) => {
       const createdAtDate = new Date(oldMessage.createdAt);
-
+  
       const day = createdAtDate.toLocaleDateString('de');
       const timestamp = createdAtDate.toLocaleTimeString('de', {
         hour: 'numeric',
         minute: 'numeric',
       });
-
+  
       let message = `<strong>${oldMessage.nickname}:</strong> ${oldMessage.message} - <small>${timestamp}</small><br>`;
-
+  
       // If the day has changed, include the date in the message
       if (day !== this.currentDay) {
         message = `${day}<br>${message}`;
         this.currentDay = day;
       }
-
-      this.addMessageToDisplay(message);
+  
+      // Use the nickname of the old message as the sender
+      this.addMessageToDisplay(message, oldMessage.nickname);
     });
   }
 
-  private addMessageToDisplay(message: string): void {
-    this.messages.push(message); // Add the message to the messages array
+  private addMessageToDisplay(message: string, sender: string): void {
+    // Add a class to the message based on the sender
+  const messageClass = sender === this.nickname ? 'current-user' : 'other-user';
+
+  // Add the message to the messages array with its class
+  this.messages.push({ message: message, class: messageClass });
   }
 }

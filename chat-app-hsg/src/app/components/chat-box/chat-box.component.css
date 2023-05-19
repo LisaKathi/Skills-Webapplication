@@ -2,6 +2,16 @@
   min-height: 300px;
 }
 
+.current-user {
+  text-align: right;
+  color: blue;
+}
+
+.other-user {
+  text-align: left;
+  color: red;
+}
+
 .form-control {
   height: 400px;
   overflow: auto;

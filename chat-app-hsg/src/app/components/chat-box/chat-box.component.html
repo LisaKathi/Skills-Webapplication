@@ -1,6 +1,6 @@
 <div class="wrapper">
   <div class="form-control">
-    <p *ngFor="let message of messages" [innerHTML]="message"></p>
+    <p [ngClass]="msg.class" [innerHTML]="msg.message" *ngFor="let msg of messages"></p>
   </div>
 </div>
 
