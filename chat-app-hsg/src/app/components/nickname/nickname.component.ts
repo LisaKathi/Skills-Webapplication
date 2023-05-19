@@ -1,4 +1,10 @@
-import { Component, EventEmitter, Output,  ElementRef, Renderer2 } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Output,
+  ElementRef,
+  Renderer2,
+} from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -6,7 +12,6 @@ import { Router } from '@angular/router';
   templateUrl: './nickname.component.html',
   styleUrls: ['./nickname.component.css'],
 })
-
 export class NicknameComponent {
   @Output() public nicknameCreate = new EventEmitter<string>();
 
@@ -15,8 +20,13 @@ export class NicknameComponent {
   public characterCount = 0;
   public maxCharacterLimit = 15;
 
-  public createNickname(nickname: string): void {
+  constructor(
+    private el: ElementRef,
+    private renderer: Renderer2,
+    private router: Router
+  ) {}
 
+  public createNickname(nickname: string): void {
     if (!nickname) {
       this.message = 'Bitte geben Sie einen Nickname ein.';
       return; // Exit the method if the nickname is empty
@@ -24,15 +34,15 @@ export class NicknameComponent {
 
     const regex = /^[a-zA-Z0-9]+$/; // Regular expression for alphanumeric characters
 
-  if (!regex.test(nickname)) {
-    this.message = 'Nur alphanumerische Zeichen sind erlaubt.';
-    this.nickname = '';
-    return; // Exit the method if invalid characters are found
-  }
+    if (!regex.test(nickname)) {
+      this.message = 'Nur alphanumerische Zeichen sind erlaubt.';
+      this.nickname = '';
+      return; // Exit the method if invalid characters are found
+    }
 
-      this.nicknameCreate.emit(nickname);
-      setTimeout(() => {
-        this.message = `Herzlich willkommen, ${nickname}!`;
+    this.nicknameCreate.emit(nickname);
+    setTimeout(() => {
+      this.message = `Herzlich willkommen, ${nickname}!`;
     }, 2150);
   }
 
@@ -46,32 +56,31 @@ export class NicknameComponent {
     }
   }
 
-  constructor(private el: ElementRef, private renderer: Renderer2, private router: Router) {}
-
   animateButton(nickname: string) {
     const regex = /^[a-zA-Z0-9]+$/;
     if (regex.test(nickname)) {
-    const button = this.el.nativeElement.querySelector('.erstellen');
-    //this.preventDefault()
-    this.renderer.removeClass(button, 'animate');
-    this.renderer.addClass(button, 'animate');
-    this.renderer.addClass(button, 'animate');
-
-    setTimeout(() => {
+      const button = this.el.nativeElement.querySelector('.erstellen');
+      //this.preventDefault()
       this.renderer.removeClass(button, 'animate');
-    }, 6000);
+      this.renderer.addClass(button, 'animate');
+      this.renderer.addClass(button, 'animate');
+
+      setTimeout(() => {
+        this.renderer.removeClass(button, 'animate');
+      }, 6000);
+    }
   }
-  }
+  
   redirectToStart(nickname: string) {
     const regex = /^[a-zA-Z0-9]+$/;
     if (regex.test(nickname)) {
-    const button = this.el.nativeElement.querySelector('.erstellen');
+      const button = this.el.nativeElement.querySelector('.erstellen');
 
-    setTimeout(() => {
-     
-      this.router.navigate(['/start'], { queryParams: { nickname: this.nickname } });
-    }, 3000);
+      setTimeout(() => {
+        this.router.navigate(['/start'], {
+          queryParams: { nickname: this.nickname },
+        });
+      }, 3000);
+    }
   }
-  
-  }
-  }
+}

@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -11,7 +12,7 @@ export class ChatBoxComponent {
   @Input() nickname = '';
   @Output() submitMessage = new EventEmitter<string>();
   
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private route: ActivatedRoute) {
   }
 
   public chatMessage = '';
@@ -21,6 +22,12 @@ export class ChatBoxComponent {
 
   public characterCount = 0;
   public maxCharacterLimit = 1000;
+
+  ngOnInit() {
+    this.route.queryParams.subscribe(params => {
+      this.nickname = params['nickname'];
+    });
+  }
 
   public onTextInput(event: any): void {
     this.characterCount = this.chatMessage.length;
