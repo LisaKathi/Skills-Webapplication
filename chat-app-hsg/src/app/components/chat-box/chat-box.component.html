@@ -1,11 +1,11 @@
 <div class="wrapper">
-  <div class="form-control">
+  <div class="form-control" #scrollMe [scrollTop]="scrollMe.scrollHeight">
     <p [ngClass]="msg.class" [innerHTML]="msg.message" *ngFor="let msg of messages"></p>
   </div>
 </div>
 
 <textarea
-  class="form-control"
+  class="form-control-input"
   rows="2"
   type="text"
   placeholder="Nachricht eingeben"

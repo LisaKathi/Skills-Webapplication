@@ -19,7 +19,7 @@
   border: 1px solid #ccc; /* Sets a light grey border */
   box-sizing: border-box; /* Ensures padding and border are included in width */
   margin-bottom: 10px; /* Adds some space between input boxes */
-  width: 13%;
+  width: 14rem;
   margin: 0px 10px 10px 0px;
   border-radius: 10rem;
   position: absolute;

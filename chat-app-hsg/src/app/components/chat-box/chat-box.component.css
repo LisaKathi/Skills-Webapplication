@@ -45,6 +45,28 @@
   border-radius: 15px;
 }
 
+.form-control-input{
+  overflow: auto;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  width: 72%;
+  margin: 0% 14%;
+  position: relative;
+  border-radius: 15px;
+  text-align: left;
+  padding: 10px 20px;
+  resize: none; /* Disables manual resizing */
+  overflow: auto; /* Enable scrolling for long messages */
+  white-space: pre-wrap; /* Breaks long lines into new lines */
+  padding: 10px; /* Adds padding inside the input boxes */
+  border: 1px solid #ccc; /* Sets a light grey border */
+  box-sizing: border-box; /* Ensures padding and border are included in width */
+  position: relative;
+  width: 72%;
+  margin: 10px 14%;
+  border-radius: 15px;
+
+}
 /*.button-container {
   display: flex; 
   justify-content: center; 
