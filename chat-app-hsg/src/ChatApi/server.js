@@ -24,7 +24,7 @@ db.serialize(function () {
   );
 });
 
-app.post('/history', function (req, res) {
+app.post('/chatHistory', function (req, res) {
   const chatMessage = req.body?.message?.toString();
   const nickname = req.body?.nickname?.toString();
 
@@ -44,6 +44,35 @@ app.post('/history', function (req, res) {
     }
 
     res.json({ message: 'Chat message added successfully!', id: this.lastID });
+  });
+});
+
+// Get all messages
+app.get('/chatHistory', function (req, res) {
+  const sql = 'SELECT * FROM chatHistory';
+  db.all(sql, [], (err, rows) => {
+    if (err) {
+      res.status(500).send(err);
+      return;
+    }
+    res.json(rows);
+  });
+});
+
+// Get all messages by a user
+app.get('/chatHistory/:nickname', function (req, res) {
+  const sql = 'SELECT * FROM chatHistory WHERE nickname = ?';
+  const params = [req.params.nickname];
+  db.all(sql, params, (err, rows) => {
+    if (err) {
+      res.status(500).send(err);
+      return;
+    }
+    if (rows.length == 0) {
+      res.status(404).send(`No messages found for nickname = ${req.params.nickname}`);
+      return;
+    }
+    res.json(rows);
   });
 });
 

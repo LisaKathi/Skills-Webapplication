@@ -2,6 +2,12 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
 
+interface ChatMessage {
+  id: number;
+  message: string;
+  nickname: string;
+  createdAt: string;
+}
 
 @Component({
   selector: 'app-chat-box',
@@ -11,22 +17,48 @@ import { ActivatedRoute } from '@angular/router';
 export class ChatBoxComponent {
   @Input() nickname = '';
   @Output() submitMessage = new EventEmitter<string>();
-  
-  constructor(private http: HttpClient, private route: ActivatedRoute) {
-  }
+
+  constructor(private http: HttpClient, private route: ActivatedRoute) {}
 
   public chatMessage = '';
-  public messages: string[] = []; 
+  public messages: string[] = [];
+  public oldMessages: ChatMessage[] = [];
   public errorMessage = '';
   private isFirstMessage = true;
+  private currentDay = '';
 
   public characterCount = 0;
   public maxCharacterLimit = 1000;
 
   ngOnInit() {
-    this.route.queryParams.subscribe(params => {
+    this.route.queryParams.subscribe((params) => {
       this.nickname = params['nickname'];
     });
+
+    //load messages for user
+    this.http
+      .get<ChatMessage[]>('http://localhost:3000/chatHistory/' + this.nickname)
+      .subscribe(
+        (data: ChatMessage[]) => {
+          this.oldMessages = data;
+          this.displayOldMessages();
+        },
+        (error: any) => {
+          console.error('Error:', error);
+        }
+      );
+
+    //test: getting all chatMessages
+    this.http
+      .get<ChatMessage[]>('http://localhost:3000/chatHistory/')
+      .subscribe(
+        (data: ChatMessage[]) => {
+          console.log(data);
+        },
+        (error: any) => {
+          console.error('Error:', error);
+        }
+      );
   }
 
   public onTextInput(event: any): void {
@@ -39,9 +71,6 @@ export class ChatBoxComponent {
   }
 
   public addMessage(message: string): void {
-    // Just for testing
-    console.log('button send works');
-
     if (!message.trim()) {
       this.errorMessage = 'Bitte schreiben Sie eine Nachricht!';
       this.chatMessage = '';
@@ -73,15 +102,19 @@ export class ChatBoxComponent {
       }
     );
 
+    // timestamp for display purposes
     const timestamp = new Date().toLocaleTimeString('de', {
       hour: 'numeric',
       minute: 'numeric',
-    }); // format time to show only hours and minutes
+    });
+
+    const day = new Date().toLocaleDateString('de');
+
     let messageToSend = '';
-    if (this.isFirstMessage) {
-      const date = new Date().toLocaleDateString('de');
-      messageToSend = `${date}<br><strong>${this.nickname}:</strong> ${message} - <small>${timestamp}</small><br>`; // append date to the first message
-      this.isFirstMessage = false;
+
+    if (day !== this.currentDay) {
+      messageToSend = `${day}<br><strong>${this.nickname}:</strong> ${message} - <small>${timestamp}</small><br>`; // append date to the first message
+      this.currentDay = day;
     } else {
       messageToSend = `<strong>${this.nickname}:</strong> ${message} - <small>${timestamp}</small><br>`; // skip date for subsequent messages
     }
@@ -91,6 +124,29 @@ export class ChatBoxComponent {
     this.chatMessage = '';
     this.errorMessage = '';
   }
+
+  public displayOldMessages(): void {
+    this.oldMessages.forEach((oldMessage: ChatMessage) => {
+      const createdAtDate = new Date(oldMessage.createdAt);
+
+      const day = createdAtDate.toLocaleDateString('de');
+      const timestamp = createdAtDate.toLocaleTimeString('de', {
+        hour: 'numeric',
+        minute: 'numeric',
+      });
+
+      let message = `<strong>${oldMessage.nickname}:</strong> ${oldMessage.message} - <small>${timestamp}</small><br>`;
+
+      // If the day has changed, include the date in the message
+      if (day !== this.currentDay) {
+        message = `${day}<br>${message}`;
+        this.currentDay = day;
+      }
+
+      this.addMessageToDisplay(message);
+    });
+  }
+
   private addMessageToDisplay(message: string): void {
     this.messages.push(message); // Add the message to the messages array
   }
