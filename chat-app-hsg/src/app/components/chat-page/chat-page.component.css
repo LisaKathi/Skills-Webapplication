@@ -41,7 +41,6 @@ a {
     margin-left: 10px;
     overflow: hidden;
     z-index: 1;
-    -webkit-appearance: none;
     transition: background-color 0.3s, color 0.3s;
 
 }
@@ -55,6 +54,4 @@ a:active{
     background-color: #6dba8a;
     transform: scale(0.95);
 }
-.wrapper {
 
-}

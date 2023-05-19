@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 
 @Component({
@@ -6,13 +7,15 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   templateUrl: './chat-box.component.html',
   styleUrls: ['./chat-box.component.css'],
 })
-
 export class ChatBoxComponent {
   @Input() nickname = '';
   @Output() submitMessage = new EventEmitter<string>();
-
+  
+  constructor(private http: HttpClient) {
+  }
 
   public chatMessage = '';
+  public messages: string[] = []; 
   public errorMessage = '';
   private isFirstMessage = true;
 
@@ -29,6 +32,9 @@ export class ChatBoxComponent {
   }
 
   public addMessage(message: string): void {
+    // Just for testing
+    console.log('button send works');
+
     if (!message.trim()) {
       this.errorMessage = 'Bitte schreiben Sie eine Nachricht!';
       this.chatMessage = '';
@@ -43,7 +49,27 @@ export class ChatBoxComponent {
       return;
     }
 
-    const timestamp = new Date().toLocaleTimeString('de', { hour: 'numeric', minute: 'numeric' }); // format time to show only hours and minutes
+    // create a new message object (for Database)
+    const newMessage = {
+      message: message,
+      nickname: this.nickname,
+      createdAt: new Date().toISOString(), // convert date to ISO string
+    };
+
+    // send a POST request to the server
+    this.http.post('http://localhost:3000/history', newMessage).subscribe(
+      (response) => {
+        console.log(response);
+      },
+      (error) => {
+        console.error(error);
+      }
+    );
+
+    const timestamp = new Date().toLocaleTimeString('de', {
+      hour: 'numeric',
+      minute: 'numeric',
+    }); // format time to show only hours and minutes
     let messageToSend = '';
     if (this.isFirstMessage) {
       const date = new Date().toLocaleDateString('de');
@@ -53,11 +79,12 @@ export class ChatBoxComponent {
       messageToSend = `<strong>${this.nickname}:</strong> ${message} - <small>${timestamp}</small><br>`; // skip date for subsequent messages
     }
 
-    this.submitMessage.emit(messageToSend);
+    this.addMessageToDisplay(messageToSend);
+
     this.chatMessage = '';
     this.errorMessage = '';
-
   }
-
-
+  private addMessageToDisplay(message: string): void {
+    this.messages.push(message); // Add the message to the messages array
+  }
 }

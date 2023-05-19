@@ -1,3 +1,7 @@
+<div *ngFor="let message of messages">
+  <p [innerHTML]="message"></p>
+</div>
+
 <textarea
   class="form-control"
   rows="2"
@@ -6,15 +10,8 @@
   [(ngModel)]="chatMessage"
   (keyup.enter)="addMessage(chatMessage)"
   (input)="onTextInput($event)"
-
 ></textarea>
 
-<button
-  class="send"
-  (click)="addMessage(chatMessage)"
->
-  SENDEN
-</button>
-<span class=charremain>
-  {{ characterCount }}/{{maxCharacterLimit}}</span>
+<button class="send" (click)="addMessage(chatMessage)">SENDEN</button>
+<span class="charremain"> {{ characterCount }}/{{ maxCharacterLimit }}</span>
 <div *ngIf="errorMessage" class="alert alert-warning">{{ errorMessage }}</div>

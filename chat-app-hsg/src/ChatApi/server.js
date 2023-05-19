@@ -1,157 +1,52 @@
-var express = require('express');
-var app = express();
-var port = 3000;
+const express = require('express');
+const sqlite3 = require('sqlite3').verbose();
+const cors = require('cors'); 
 
-app.set('port', port);
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+const app = express();
+const db = new sqlite3.Database('./my_database.db');
 
-const chatHistory = [];
-const nicknames = [];
-
-// Add headers
-app.use(function (req, res, next) {
-  // Website you wish to allow to connect
-  res.setHeader('Access-Control-Allow-Origin', '*');
-
-  // Request methods you wish to allow
-  res.setHeader(
-    'Access-Control-Allow-Methods',
-    'GET, POST, OPTIONS, PUT, PATCH, DELETE'
-  );
-
-  // Request headers you wish to allow
-  res.header(
-    'Access-Control-Allow-Headers',
-    'Origin, X-Requested-With, Content-Type, Accept'
-  );
-
-  // Pass to next layer of middleware
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
   next();
 });
 
-// test
-app.get('/', function (req, res, next) {
-  res.json({ message: 'hsg chat-app api works...' });
+app.use(cors()); 
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+db.serialize(function () {
+  db.run(
+    'CREATE TABLE IF NOT EXISTS chatHistory (id INTEGER PRIMARY KEY, message TEXT, nickname TEXT, createdAt TEXT)'
+  );
+  db.run(
+    'CREATE TABLE IF NOT EXISTS nicknames (id INTEGER PRIMARY KEY, nickname TEXT, createdAt TEXT)'
+  );
 });
 
-// history
-app.get('/history', function (req, res, next) {
-  res.send(chatHistory);
-});
-
-app.post('/history', function (req, res, next) {
+app.post('/history', function (req, res) {
   const chatMessage = req.body?.message?.toString();
   const nickname = req.body?.nickname?.toString();
 
-  if (!chatMessage) {
-    res.status(400).send('Message is missing.');
+  if (!chatMessage || !nickname) {
+    res.status(400).send('Both message and nickname are required.');
     return;
   }
 
-  if (!nickname) {
-    res.status(400).send('Nickname is missing.');
-    return;
-  }
+  const date = new Date().toISOString();
 
-  const date = new Date();
-  const message = {
-    id: chatHistory.length + 1,
-    message: chatMessage,
-    nickname: nickname,
-    createdAt: date,
-  };
+  const sql = 'INSERT INTO chatHistory(message, nickname, createdAt) VALUES(?, ?, ?)';
+  const params = [chatMessage, nickname, date];
+  db.run(sql, params, function (err) {
+    if (err) {
+      res.status(400).send(err);
+      return;
+    }
 
-  chatHistory.push(message);
-
-  res.json(chatHistory);
+    res.json({ message: 'Chat message added successfully!', id: this.lastID });
+  });
 });
 
-// nicknames
-app.get('/nicknames', function (req, res, next) {
-  res.send(nicknames);
-});
-
-app.get('/nicknames/:id', function (req, res, next) {
-  // simple for loop -> code below was commented away I shall try to uncomment
-     for (var i = 0; nicknames.length > 0; i++) {
-       var nickname = nicknames[i]
-
-       if (nickname && nickname.id === req.params.id) {
-         res.send({ username: nickname.username, id: nickname.id })
-       }
-   }
-
-  //   foreach in array
-     nicknames.forEach((nickname) => {
-       if (nickname && nickname.id === req.params.id) {
-         res.send({ username: nickname.username, id: nickname.id })
-       }
-     })
-  // commented until this point
-
-  // build-in .find function
-  const id = +req.params.id;
-  const nickname = nicknames.find((e) => e.id === id);
-
-  if (!nickname) {
-    res.status(404).send('Nickname not found.');
-    return;
-  }
-
-  res.send(nickname);
-});
-
-app.post('/nicknames', function (req, res, next) {
-  const userName = req.body?.nickname?.toString();
-
-  if (!userName) {
-    res.status(400).send('Nickname is missing.');
-    return;
-  }
-
-  if (!isNicknameUnique(userName)) {
-    res.status(409).send(`Nickname ${userName} already exists.`);
-    return;
-  }
-
-  const date = new Date();
-  const nickname = {
-    id: nicknames.length + 1,
-    nickname: userName,
-    createdAt: date,
-  };
-
-  nicknames.push(nickname);
-
-  res.json(nicknames);
-});
-
-app.delete('/nicknames/:id', function (req, res, next) {
-  const id = +req.params.id;
-  const nickName = nicknames.find((e) => e.id === id);
-
-  if (!nickName) {
-    res.status(404).send('Nickname not found.');
-    return;
-  }
-
-  const index = nicknames.findIndex((e) => e.id === id);
-
-  if (index < 0) {
-    res.status(404).send('Nickname id not found.');
-    return;
-  }
-
-  nicknames.splice(index, 1);
-
-  res.send('Nickname deleted.');
-});
-
-function isNicknameUnique(nickName) {
-  return !nicknames?.some((e) => e.userName === nickName);
-}
-
-app.listen(app.get('port'), function () {
-  console.log('Node app is running on port', app.get('port'));
+app.listen(3000, function () {
+  console.log('Node app is running on port', 3000);
 });
