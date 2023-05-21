@@ -1,7 +1,7 @@
 
 
 // SQLite3 Datenbank-Code
-/*const express = require('express');
+const express = require('express');
 const sqlite3 = require('sqlite3').verbose();
 const cors = require('cors'); 
 
@@ -82,4 +82,3 @@ app.get('/chatHistory/:nickname', function (req, res) {
 app.listen(3000, function () {
   console.log('Node app is running on port', 3000);
 });
-*/
