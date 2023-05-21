@@ -37,7 +37,7 @@ export class ChatBoxComponent {
 
     //load messages for user
     this.http
-      .get<ChatMessage[]>('http://localhost:3000/chatHistory/')
+      .get<ChatMessage[]>('https://us-central1-chatapp-51171.cloudfunctions.net/getChatHistory')
       .subscribe(
         (data: ChatMessage[]) => {
           this.oldMessages = data;
@@ -81,7 +81,7 @@ export class ChatBoxComponent {
     };
 
     // send a POST request to the server
-    this.http.post('http://localhost:3000/chatHistory', newMessage).subscribe(
+    this.http.post('https://us-central1-chatapp-51171.cloudfunctions.net/addChatMessage', newMessage).subscribe(
       (response) => {
         console.log(response);
       },
