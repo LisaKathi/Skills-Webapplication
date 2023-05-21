@@ -1,9 +1,9 @@
 
 .hero-img{
-    width: 649px;
-    height: 500px;
+    width: 590px;
+    height: 450px;
     position: relative;
-    left: -90px;
+    left: -70px;
     }
 
     .wrapper-btn-elements{
@@ -44,7 +44,7 @@
     font-family: 'Outfit', sans-serif;
     font-style: normal;
     font-weight: 700;
-    font-size: 29px;
+    font-size: 34px;
     line-height: 97%;  
     color: #00802F;
     margin-bottom: 30px;
@@ -79,5 +79,5 @@
 
     width: 650px;
     height: 265px;
-    margin-top: 60px;
+    /*margin-top: 60px;*/
     }

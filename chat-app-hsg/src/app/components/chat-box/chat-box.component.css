@@ -1,7 +1,9 @@
 .wrapper {
   min-height: 300px;
 }
-
+.text-message{
+  font-size: 14px;
+}
 .current-user {
   text-align: right;
   color: black; 
@@ -48,6 +50,7 @@
 .form-control-input{
   overflow: auto;
   border: 1px solid #ccc;
+  font-family: Outfit, sans-serif;
   box-sizing: border-box;
   width: 72%;
   margin: 0% 14%;
