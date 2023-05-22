@@ -26,28 +26,28 @@ const db = admin.firestore();
 
 // POST: Create a new nickname
 exports.createNickname = functions.https.onRequest(async (req, res) => {
-    // Get the nickname from the request
-    const nickname = req.body.nickname;
-    
-    // Check if the nickname already exists
-    const snapshot = await db.collection('nicknames').where('nickname', '==', nickname).get();
-    
-    if (!snapshot.empty) {
-      // Nickname already exists
-      res.status(400).send('Nickname already exists.');
-      return;
-    }
-    
-    // Nickname does not exist, so create it
-    const data = {
-      nickname: nickname,
-      createdAt: admin.firestore.FieldValue.serverTimestamp()
-    };
-    const docRef = await db.collection('nicknames').add(data);
-    
-    res.json({ message: 'Nickname created successfully!', id: docRef.id });
-  });
+  // Get the nickname from the request
+  const nickname = req.body.nickname;
   
+  // Check if the nickname already exists
+  const snapshot = await db.collection('nicknames').where('nickname', '==', nickname).get();
+  
+  if (!snapshot.empty) {
+    // Nickname already exists
+    res.status(400).send('Nickname already exists.');
+    return;
+  }
+  
+  // Nickname does not exist, so create it
+  const data = {
+    nickname: nickname,
+    createdAt: admin.firestore.FieldValue.serverTimestamp()
+  };
+  const docRef = await db.collection('nicknames').add(data);
+  
+  res.json({ message: 'Nickname created successfully!', id: docRef.id });
+  });
+  
 
 // POST: Add chat message
 exports.addChatMessage = functions.https.onRequest(async (req, res) => {
